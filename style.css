@@ -125,12 +125,16 @@ body {
   border: 1px solid rgba(51, 65, 85, 0.8);
   border-radius: 12px;
   padding: 1.25rem;
-  transition: border-color 0.2s ease;
+  /* Add this transition line */
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
 }
 
 .project-card:hover {
-  border-color: rgba(100, 116, 139, 0.8);
+  border-color: var(--teal-accent);
+  /* A tiny 2px lift effect creates great visual feedback */
+  transform: translateY(-2px); 
 }
+
 
 .project-name {
   font-size: 0.875rem;
@@ -263,4 +267,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+html {
+  scroll-behavior: smooth;
 }
